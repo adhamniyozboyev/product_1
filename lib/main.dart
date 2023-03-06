@@ -15,6 +15,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  List<String> name = [
+    'Captiva',
+    'Gentra',
+    'Malibu',
+    'Kia',
+    'Hyundai',
+    'Ferrari',
+    'Bugatti',
+    'BMW',
+    'Mersades Bens',
+    'Rolce Royse'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,19 +38,30 @@ class _MyAppState extends State<MyApp> {
           itemBuilder: (context, index) {
             double price = index * 2.5;
             return Card(
+              color: Colors.grey.shade300,
+              shadowColor: Colors.red,
               child: ListTile(
                 leading: Icon(
                   Icons.car_rental,
                   color: Colors.red,
                 ),
                 title: Text(
-                  'Car ${index + 1}',
+                  '${name[index]}',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                subtitle: Text('cost$price'),
-                trailing: IconButton(onPressed: () => {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ShowDetails(index: index)))
-                },icon: Icon(Icons.arrow_forward_ios,color: Colors.purple,),),
+                subtitle: Text('Price$price'),
+                trailing: IconButton(
+                  onPressed: () => {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShowDetails(index: index)))
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.purple,
+                  ),
+                ),
               ),
             );
           }),

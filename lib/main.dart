@@ -55,7 +55,9 @@ class _MyAppState extends State<MyApp> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ShowDetails(index: index)))
+                            builder: (context) => ShowDetails(
+                                  index: index,
+                                )))
                   },
                   icon: Icon(
                     Icons.arrow_forward_ios,

@@ -38,7 +38,14 @@ class _ShowDetailsState extends State<ShowDetails> {
 
   Widget func(int ind) {
     return Column(
-      children: [Image.asset(img[ind]), Text(info[ind])],
+      children: [
+        Image.asset(img[ind]),
+        Card(
+            child: Text(
+          info[ind],
+          style: TextStyle(fontSize: 20),
+        ))
+      ],
     );
   }
 
